@@ -16,8 +16,6 @@ export const bankAccounts = [
   },
   { id: 4, name: "Candy", balance: 0.0 },
   { id: 5, name: "Phil", balance: 18, deposits: [100, 18], withdrawals: [100] },
-  { id: 6, name: "Kevin", balance: 0.0 },
-  { id: 7, name: "Jon", balance: 0.0 },
 ];
 
 export const bankAccountsNoPositiveBalance = [
