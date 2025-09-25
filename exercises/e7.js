@@ -5,9 +5,20 @@
 // getClientWithLeastBalance(bankAccounts) => [{ name: 'SomeName', balance: 32, ... }]
 
 export function getClientWithLeastPositiveBalance(array) {
-  // Your code goes here...
-  
+  let result = [];
+  let minBalance = Infinity;
+
+  for (let i = 0; i < array.length; i++) {
+    let account = array[i];
+    if (account.balance > 0 && account.balance < minBalance) {
+      minBalance = account.balance;
+      result = [];
+      result.push(account);
+    }
+  }
+  return result;
 }
+
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-7"
