@@ -19,6 +19,8 @@ export function getClientWithLeastPositiveBalance(array) {
   return result;
 }
 
+console.log(getClientWithLeastPositiveBalance);
+
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-7"
