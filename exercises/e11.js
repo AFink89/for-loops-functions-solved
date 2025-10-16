@@ -4,21 +4,28 @@
 // Array example: bankAccounts in /data/data.js
 // getAllWithdrawals(bankAccounts) => [3432, 0, 43242.34, 0, 23432]
 
+import { bankAccounts } from "./e5";
+
 export function getAllWithdrawals(array) {
   let result = [];
 
   for (let i = 0; i < array.length; i++) {
     let account = array[i];
+    let sum = 0;
+
     if (account.withdrawals && account.withdrawals.length > 0) {
-      let sum = account.withdrawals.reduce((total, num) => total + num, 0);
-      result.push(sum);
-    } else {
-      result.push(0);
+      for (let j = 0; j < account.withdrawals.length; j++) {
+        sum += account.withdrawals[j];
+      }
     }
+
+    result.push(sum);
   }
 
   return result;
 }
+
+console.log(getAllWithdrawals(bankAccounts));
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-11"

@@ -8,15 +8,23 @@ export function getClientsWithLetterInName(bankAccounts, letter) {
   let searchLetter = letter.toLowerCase();
 
   for (let i = 0; i < bankAccounts.length; i++) {
-    let account = bankAccounts[i];
-    if (account.name.toLowerCase().includes(searchLetter)) {
-      result.push(account.name);
+    let name = bankAccounts[i].name.toLowerCase();
+    let hasLetter = false;
+
+    for (let j = 0; j < name.length; j++) {
+      if (name[j] === searchLetter) {
+        hasLetter = true;
+        break;
+      }
+    }
+
+    if (hasLetter) {
+      result.push(bankAccounts[i].name);
     }
   }
 
   return result;
 }
-
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-10"

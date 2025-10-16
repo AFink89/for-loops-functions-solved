@@ -22,6 +22,7 @@ export function flatArrays(array) {
   return result;
 }
 
+console.log(flatArrays([['d', 'r'], 'z', 'b', ['f', 'y']]));
 
 
 // === TEST YOURSELF ===

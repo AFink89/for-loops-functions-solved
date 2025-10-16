@@ -4,6 +4,8 @@
 // Array example: bankAccounts in /data/data.js
 // getClientWithLeastBalance(bankAccounts) => [{ name: 'SomeName', balance: 32, ... }]
 
+import { bankAccounts } from "./e5";
+
 export function getClientWithLeastPositiveBalance(array) {
   let result = [];
   let minBalance = Infinity;
@@ -19,7 +21,7 @@ export function getClientWithLeastPositiveBalance(array) {
   return result;
 }
 
-console.log(getClientWithLeastPositiveBalance);
+console.log(getClientWithLeastPositiveBalance(bankAccounts));
 
 
 // === TEST YOURSELF ===

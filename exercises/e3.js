@@ -16,6 +16,7 @@ export function getAverage(array) {
   return sum / array.length;
 }
 
+console.log(getAverage([22, 45, 4, 65]));
 
 /** 
  * PART 2

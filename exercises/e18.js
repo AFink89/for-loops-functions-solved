@@ -17,6 +17,10 @@ export function joinToString(array, separator) {
   return result;
 }
 
+console.log(joinToString(['a', 'b', 'c'], '-'));
+console.log(joinToString(['1', '2', '3'], ','));
+
+
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-18"
 // If the test has all tests passed, switch to the next exercise file

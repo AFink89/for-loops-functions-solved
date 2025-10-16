@@ -14,6 +14,10 @@ export function doesArrayInclude(array, value) {
   return false;
 }
 
+console.log(doesArrayInclude(['a', 'b', 'c'], 'a'));
+console.log(doesArrayInclude(['a', 'b', 'c'], 'f'));
+
+
 
 
 // === TEST YOURSELF ===

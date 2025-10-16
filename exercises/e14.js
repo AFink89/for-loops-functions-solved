@@ -5,17 +5,29 @@
 // Array example: bankAccounts in /data/data.js
 // getClientsWithWrongBalance(bankAccounts) => [{ name: 'Name1', balance: 32, ... }, { name: 'Name2', balance: 3523, ... }]
 
+import { bankAccounts } from "../data/data.js";
+
 export function getClientsWithWrongBalance(array) {
   let result = [];
 
   for (let i = 0; i < array.length; i++) {
     let account = array[i];
+    let totalDeposits = 0;
+    let totalWithdrawals = 0;
 
-    let totalDeposits = account.deposits ? account.deposits.reduce((sum, num) => sum + num, 0) : 0;
-    let totalWithdrawals = account.withdrawals ? account.withdrawals.reduce((sum, num) => sum + num, 0) : 0;
+    if (account.deposits && account.deposits.length > 0) {
+      for (let j = 0; j < account.deposits.length; j++) {
+        totalDeposits += account.deposits[j];
+      }
+    }
+
+    if (account.withdrawals && account.withdrawals.length > 0) {
+      for (let k = 0; k < account.withdrawals.length; k++) {
+        totalWithdrawals += account.withdrawals[k];
+      }
+    }
 
     let expectedBalance = totalDeposits - totalWithdrawals;
-
     if (account.balance !== expectedBalance) {
       result.push(account);
     }
@@ -24,7 +36,7 @@ export function getClientsWithWrongBalance(array) {
   return result;
 }
 
-
+console.log(getClientsWithWrongBalance(bankAccounts));
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-14"
